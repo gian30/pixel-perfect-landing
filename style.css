@@ -49,7 +49,7 @@ p.body-intro {
     margin: 0 auto;
 }
 
-button.circle-button {
+button.circle-button, a.circle-button {
     font-size: 17px;
     border-radius: 0px;
     background-color: #072AC8;
@@ -58,6 +58,7 @@ button.circle-button {
     display: inline-block;
     padding: 16px 33px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 button.circle-button-transparent {
@@ -410,17 +411,14 @@ a.circle-link {
     font-weight: 300;
     color: #292E47;
     letter-spacing: 0.02em;
-
     background: url("/assets/newsletter/icon/mail.svg") no-repeat left #fff;
     background-size: 29px;
     background-position: 33px 26px;
 }
 
 .newsletter .newsletter-form .newsletter-input::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #292E47;
     opacity: 1;
-    /* Firefox */
 }
 
 
@@ -475,4 +473,53 @@ footer .footer-nav ul li a {
     font-weight: 300;
     letter-spacing: 0.02em;
     text-decoration: none;
+}
+
+
+
+.project {
+    padding: 85px 0 0 0;
+}
+
+.project h1 {}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-header p {
+    margin-top: 20px;
+
+}
+
+.project-header .project-desc {
+    font-size: 24px;
+    color: #6B708D;
+    letter-spacing: 0.005em;
+}
+
+.project-header .project-date {
+    font-size: 20px;
+    margin-top: 17px;
+}
+
+.project-header .project-date span {
+    color: #6B708D;
+}
+.project-body {
+    padding: 55px 0 0 0;
+}
+.project-body img {
+    width: 100%;
+    height: 445px;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 38px 77px 0px;
+}
+.project-body .project-text {
+    margin-top: 67px;
+    font-size: 20px;
+    line-height: 1.5em;
+    letter-spacing: 0.0005em;
 }
