@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: #292E47;
@@ -7,7 +11,6 @@ body {
 body * {
     box-sizing: border-box;
 }
-
 
 h1 {
     font-size: 60px;
@@ -33,10 +36,11 @@ h4 {
     margin: 0;
 }
 
-p.body-intro {
+p.hero-intro {
     font-size: 20px;
     font-weight: 400;
     line-height: 1.5;
+    color: #6B708D;
 }
 
 .container {
@@ -62,20 +66,25 @@ a.circle-button {
     text-decoration: none;
     transition: background-color 300ms linear;
 }
+
 button.circle-button:hover,
 a.circle-button:hover {
     background-color: #292E47;
 }
 
-button.circle-button-transparent {
+button.circle-button-transparent,
+a.circle-button-transparent {
     background-color: transparent;
     color: #6B708D;
     transition: color 300ms linear;
 }
-button.circle-button-transparent:hover {
+
+button.circle-button-transparent:hover,
+a.circle-button-transparent:hover {
     background-color: transparent;
     color: #292E47;
 }
+
 a.circle-link {
     color: #072AC8;
     text-decoration: none;
@@ -83,9 +92,21 @@ a.circle-link {
     font-weight: 400;
     transition: color 300ms linear;
 }
+
 a.circle-link:hover {
     color: #000000;
 }
+
+.card {
+    will-change: transform;
+    transition: transform 450ms;
+}
+
+.card:hover {
+    transition: transform 125ms;
+    transform: translateY(-10px);
+}
+
 .navigation {
     padding: 60px 0;
     display: flex;
@@ -109,8 +130,13 @@ a.circle-link:hover {
     text-decoration: none;
     transition: color 300ms linear;
 }
+
 .navigation ul li a:hover {
     color: #292E47;
+}
+
+.navigation ul li a.active {
+    color: #072AC8;
 }
 
 .navigation .logo {
@@ -136,7 +162,7 @@ a.circle-link:hover {
     padding-top: 118px;
 }
 
-.hero .intro p.body-intro {
+.hero .intro p.hero-intro {
     margin-bottom: 41px;
     margin-top: 28px;
 }
@@ -250,9 +276,9 @@ a.circle-link:hover {
 }
 
 .reviews .container-fluid {
-    background-color: #292E47;
     height: 622px;
-
+    background: url(assets/testimonial-section/orbit.png) no-repeat center center #292E47;
+    background-size: cover;
 }
 
 .reviews .container-fluid h3.review-title {
@@ -547,7 +573,6 @@ footer .footer-nav ul li a:hover {
     letter-spacing: 0.0005em;
 }
 
-
 .contact-us {
     padding: 85px 0;
 }
@@ -566,7 +591,6 @@ footer .footer-nav ul li a:hover {
 
 .form-line .form-control {
     width: 100%;
-
 }
 
 .form-line .form-control input {
@@ -604,48 +628,48 @@ footer .footer-nav ul li a:hover {
     font-weight: 300;
     color: #292E47;
 }
+
 .circle-button.form-button {
     margin-top: 35px;
     height: 80px;
     width: 100%;
 }
 
-
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 40%;
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+/* The Close Button */
+.close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
