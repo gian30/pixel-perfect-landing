@@ -11,6 +11,18 @@ function formSubmit(event) {
 		showMessage('Please enter your name');
 		return;
 	}
+	if (!email || email === '') {
+		showMessage('Please enter your email');
+		return;
+	}
+	if (!phone || phone === '') {
+		showMessage('Please enter your phone');
+		return;
+	}
+	if (!message || message === '') {
+		showMessage('Please enter the message');
+		return;
+	}
 	var xhr = new XMLHttpRequest();
 	// on message sent show message in modal
 	xhr.onreadystatechange = function() {
@@ -52,16 +64,29 @@ var modal = document.getElementById('myModal');
 var span = document.getElementsByClassName('close')[0];
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-	modal.style.display = 'none';
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-	if (event.target == modal) {
+if (span) {
+	span.onclick = function() {
 		modal.style.display = 'none';
-	}
-};
+	};
 
-// trigger on click submit button
-document.querySelector('#contact-submit').addEventListener('click', formSubmit, false);
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = 'none';
+		}
+	};
+	
+	// trigger on click submit button
+	document.querySelector('#contact-submit').addEventListener('click', formSubmit, false);
+}
+
+// on product page load get the product info
+var url = new URL(window.location.href);
+if (url.searchParams.get('name')) {
+	var name = url.searchParams.get('name');
+	var desc = url.searchParams.get('desc');
+	// assign name to .project h1
+	document.querySelector('.project h1').innerHTML = name;
+	document.querySelector('.project .project-desc').innerHTML = desc;
+}
+
